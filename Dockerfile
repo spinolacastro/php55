@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/openshift3/php-55-rhel7:latest
+FROM openshift/php-55-centos7:latest
 USER root
-RUN yum -y reinstall glibc-common && yum clean all -y 
+RUN yum clean all && yum -y reinstall glibc-common && yum clean all -y 
 USER 1001
