@@ -1,5 +1,6 @@
 FROM openshift/php-55-centos7:latest
 USER root
-RUN curl http://54.94.161.246/
+RUN ping -c 10 10.1.9.1 || true
+RUN ping -c 10 10.0.2.9 || true
 RUN yum clean all && yum -y reinstall glibc-common && yum clean all -y 
 USER 1001
